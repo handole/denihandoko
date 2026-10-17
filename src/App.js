@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Home from './components/Home';
@@ -8,9 +8,7 @@ import Experience from './components/Experience';
 import Footer from './components/footer';
 import {
   Container,
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -18,32 +16,60 @@ import {
 } from 'reactstrap';
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setSidebarOpen((prev) => !prev);
+  const closeSidebar = () => setSidebarOpen(false);
+
+  // Prevent background scroll when mobile sidebar is open
+  useEffect(() => {
+    if (sidebarOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [sidebarOpen]);
 
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
-        <Navbar color="dark" dark expand="md" className="py-3">
+        <Navbar color="dark" dark expand="md" className="py-3 sticky-top">
           <Container>
-            <NavbarBrand tag={Link} to="/" style={navTitle}>
+            <NavbarBrand tag={Link} to="/" style={navTitle} onClick={closeSidebar}>
               Handoko
             </NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              className="burger-btn d-md-none"
+              onClick={toggleSidebar}
+              aria-label="Toggle navigation menu"
+              aria-expanded={sidebarOpen}
+            >
+              <span className="burger-line"></span>
+              <span className="burger-line"></span>
+              <span className="burger-line"></span>
+            </button>
+
+            {/* Desktop Navbar Menu */}
+            <div className="d-none d-md-block">
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink tag={Link} to="/about" style={navItemStyle} onClick={() => setIsOpen(false)}>
+                  <NavLink tag={Link} to="/about" style={navItemStyle}>
                     About
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/experience" style={navItemStyle} onClick={() => setIsOpen(false)}>
+                  <NavLink tag={Link} to="/experience" style={navItemStyle}>
                     Experience
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} to="/portofolio" style={navItemStyle} onClick={() => setIsOpen(false)}>
+                  <NavLink tag={Link} to="/portofolio" style={navItemStyle}>
                     Portofolio
                   </NavLink>
                 </NavItem>
@@ -58,9 +84,66 @@ const App = () => {
                   </NavLink>
                 </NavItem>
               </Nav>
-            </Collapse>
+            </div>
           </Container>
         </Navbar>
+
+        {/* Mobile Sidebar Overlay */}
+        <div
+          className={`sidebar-overlay ${sidebarOpen ? 'open' : ''}`}
+          onClick={closeSidebar}
+          aria-hidden="true"
+        />
+
+        {/* Mobile Slide-in Sidebar Drawer */}
+        <aside
+          className={`mobile-sidebar ${sidebarOpen ? 'open' : ''}`}
+          aria-label="Mobile Navigation"
+        >
+          <div className="sidebar-header">
+            <span className="text-white font-weight-bold" style={{ fontSize: '18px' }}>
+              Menu
+            </span>
+            <button
+              type="button"
+              className="close-btn"
+              onClick={closeSidebar}
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div className="sidebar-nav">
+            <Link to="/" className="sidebar-nav-link" onClick={closeSidebar}>
+              Home
+            </Link>
+            <Link to="/about" className="sidebar-nav-link" onClick={closeSidebar}>
+              About
+            </Link>
+            <Link to="/experience" className="sidebar-nav-link" onClick={closeSidebar}>
+              Experience
+            </Link>
+            <Link to="/portofolio" className="sidebar-nav-link" onClick={closeSidebar}>
+              Portofolio
+            </Link>
+            <a
+              href="https://github.com/handole?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sidebar-nav-link"
+              onClick={closeSidebar}
+            >
+              GitHub ↗
+            </a>
+          </div>
+
+          <div className="sidebar-footer">
+            <small className="text-muted d-block">
+              Denih Handoko &bull; Portfolio
+            </small>
+          </div>
+        </aside>
 
         <main className="flex-fill">
           <Container className="py-4">

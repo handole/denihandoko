@@ -23,7 +23,7 @@ const experiences = [
     company: 'Gramedia Digital',
     location: 'Jakarta',
     period: '03/2022 – 08/2025',
-    tech: 'RESTful APIs, Redis, E-Commerce, B2B/B2C Integrations',
+    tech: 'RESTful APIs, Python (FastAPI), MongoDB, Redis, E-Commerce, B2B/B2C Integrations',
     responsibilities: [
       'Developed and optimized APIs to support B2B & B2C operations.',
       'Integrated payment gateways (Midtrans, Xendit).',
