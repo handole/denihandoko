@@ -5,10 +5,10 @@ const experiences = [
   {
     id: 1,
     role: 'Fullstack Developer',
-    company: 'Hyperscal',
+    company: 'Hyperscal Digital Indonesia',
     location: 'Jakarta',
-    period: '11/2025 – 10/2026',
-    tech: 'Golang (Gin), Next JS, RESTful APIs, Document Parsing',
+    period: '12/2025 – 11/2026',
+    tech: 'Golang (Gin), Next JS, RESTful APIs, Kafka',
     responsibilities: [
       'Parsing payment services for payment processing systems.',
       'Built document parsing pipelines to extract and transform invoice data from multiple formats into structured database records.',
@@ -23,7 +23,7 @@ const experiences = [
     company: 'Gramedia Digital',
     location: 'Jakarta',
     period: '03/2022 – 08/2025',
-    tech: 'RESTful APIs, Midtrans, Xendit, B2B/B2C Integrations',
+    tech: 'RESTful APIs, Redis, E-Commerce, B2B/B2C Integrations',
     responsibilities: [
       'Developed and optimized APIs to support B2B & B2C operations.',
       'Integrated payment gateways (Midtrans, Xendit).',
