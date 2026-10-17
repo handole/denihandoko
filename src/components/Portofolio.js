@@ -1,82 +1,105 @@
 import React, { Component } from 'react';
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, 
-  Row, Col
+  Card, CardBody, CardTitle, CardText,
+  Badge, Button, Row, Col
 } from 'reactstrap';
+
+const projects = [
+  {
+    id: 'chemistfun',
+    title: 'ChemistFun',
+    description: 'Virtual chemistry lab simulator powered by LLM integration to simulate realistic chemical experiments safely.',
+    techStack: ['Vue.js', 'LLM', 'Virtual Lab'],
+    githubUrl: 'https://github.com/handole/chemistfun'
+  },
+  {
+    id: 'customer-pipeline',
+    title: 'Customer Pipeline',
+    description: 'Data ingestion and ETL pipeline for processing customer event streams, transformation, and analytical reporting.',
+    techStack: ['Python', 'ETL', 'Data Pipeline'],
+    githubUrl: 'https://github.com/handole/customer-pipeline'
+  },
+  {
+    id: 'ginapi',
+    title: 'Gin API Base',
+    description: 'Production-ready RESTful API starter boilerplate built with Golang, Gin Gonic framework, and modular architecture.',
+    techStack: ['Go', 'Gin', 'REST API'],
+    githubUrl: 'https://github.com/handole/ginapi'
+  },
+  {
+    id: 'fastapi',
+    title: 'FastAPI Base',
+    description: 'High-performance asynchronous REST API boilerplate built on FastAPI, Pydantic validation, and clean architecture.',
+    techStack: ['Python', 'FastAPI', 'AsyncIO'],
+    githubUrl: 'https://github.com/handole/fastapi_'
+  },
+  {
+    id: 'bookborrow',
+    title: 'Book Borrow',
+    description: 'Book rental and library inventory service managing loans, returns, and catalog state tracking.',
+    techStack: ['Python', 'Django', 'PostgreSQL'],
+    githubUrl: 'https://github.com/handole/bookborrow'
+  },
+  {
+    id: 'parser-sky',
+    title: 'Parser Sky',
+    description: 'Data extraction and parser service designed to scrape, clean, and structure flight/aviation datasets.',
+    techStack: ['Python', 'Web Scraping', 'Data Parser'],
+    githubUrl: 'https://github.com/handole/parser-sky'
+  },
+  {
+    id: 'gurupro',
+    title: 'GuruPro',
+    description: 'EdTech management platform designed for educators to streamline digital class management and student workflows.',
+    techStack: ['Python', 'Web App', 'EdTech'],
+    githubUrl: 'https://github.com/handole/GuruPro'
+  }
+];
 
 class Portofolio extends Component {
   render() {
     return (
-      <Row>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/todo.png" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Todo List</CardTitle>
-              <CardText>Todo list app, using django restfull and react js.</CardText>
-              
-            </CardBody>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/socomm.png" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Socomm</CardTitle>
-              <CardText>Post monitoring client project for software agensi, develop using flask, bootstrap and postgresql.</CardText>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/jobstaffing.png" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Job Staffing</CardTitle>
-              <CardText>Hiring jobseeker for HR, webapp with develop using django, bootstrap and postgresql.</CardText>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/pesonamalahayu.jpg" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Pesona Malahayu</CardTitle>
-              <CardSubtitle>Portal Local Tourism</CardSubtitle>
-              <CardText>Post blog and portal local tourism, develop using django, bootstrap and postgresql.</CardText>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/relawan.png" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Volunteer Monitoring</CardTitle>
-              <CardText>Volunteer monitoring for senator, develop using django, bootstrap and postgresql.</CardText>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/crbtoyota.png" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Sales area Toyota Car</CardTitle>
-              <CardText>Sales promotion Toyota, develop using django, bootstrap and postgresql.</CardText>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardImg top width="100%" src="https://handole.github.io/assets/img/portfolio/home-pc.png" alt="Card image cap" />
-            <CardBody>
-              <CardTitle>pecanducoffee</CardTitle>
-              <CardText>website coffee shop, with coffee bean from preanger in West Java Indonesia. Just selling original brewer bean this place. 
-                This project using Bootstrap for landing page, python django for backend with cellery and many more for this website.</CardText>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>      
-    )
+      <div className="py-4">
+        <h3 className="mb-4">Featured Projects</h3>
+        <Row>
+          {projects.map((project) => (
+            <Col sm="6" key={project.id} className="mb-4">
+              <Card className="h-100 shadow-sm border-0" style={{ background: '#f8f9fa' }}>
+                <CardBody className="d-flex flex-column justify-content-between">
+                  <div>
+                    <CardTitle tag="h5" className="font-weight-bold text-dark">
+                      {project.title}
+                    </CardTitle>
+                    <div className="mb-3">
+                      {project.techStack.map((tech) => (
+                        <Badge color="secondary" className="mr-1" key={tech}>
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <CardText className="text-muted" style={{ fontSize: '14px' }}>
+                      {project.description}
+                    </CardText>
+                  </div>
+                  <div className="pt-3">
+                    <Button
+                      color="dark"
+                      size="sm"
+                      outline
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on GitHub →
+                    </Button>
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
+    );
   }
 }
 

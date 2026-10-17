@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Denih Handoko - Software Engineer Portfolio
 
-## Available Scripts
+Personal portfolio web application showcasing projects, backend development experience, and technical skill sets.
 
-In the project directory, you can run:
+## Featured Repositories
 
-### `yarn start`
+* [ChemistFun](https://github.com/handole/chemistfun) - Virtual chemistry lab simulator powered by LLM integration.
+* [Customer Pipeline](https://github.com/handole/customer-pipeline) - Data ingestion and ETL pipeline for processing customer event streams.
+* [Gin API Base](https://github.com/handole/ginapi) - RESTful API boilerplate developed with Golang and Gin framework.
+* [FastAPI Base](https://github.com/handole/fastapi_) - High-performance asynchronous REST API starter template built with FastAPI.
+* [Book Borrow](https://github.com/handole/bookborrow) - Library catalog and book borrowing management platform.
+* [Parser Sky](https://github.com/handole/parser-sky) - Aviation and flight data scraping/parsing service.
+* [GuruPro](https://github.com/handole/GuruPro) - EdTech educational management platform for instructors.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* **Frontend**: React.js, Reactstrap, Bootstrap
+* **Backend Core**: Python (FastAPI, Django, Flask), Go (Gin)
+* **Databases & Tools**: PostgreSQL, Docker, Git
 
-### `yarn test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `yarn build`
+* Node.js (v14+ recommended)
+* Yarn or npm
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```bash
+# Clone the repository
+git clone https://github.com/handole/aboutme.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Navigate to project directory
+cd aboutme
 
-### `yarn eject`
+# Install dependencies
+yarn install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Start development server
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Runs on [http://localhost:3000](http://localhost:3000).
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Build for Production
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```bash
+yarn build
+```

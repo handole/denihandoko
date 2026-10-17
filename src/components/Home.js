@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
-// import { Row } from 'reactstrap';
+import React from 'react';
+import { Jumbotron, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <br />
-        <h1>Hello, world!</h1>
-        <br/>
-        <p style={conText}>I am Denih Handoko, a software engineer </p>
-        <p style={conText}>Loves technology. Ideal professional to augment a technical team for back end development. Python is efficient & extremely powerful.</p>
-        <p style={conText}>I has a preference for back end programming. Finds joy in helping his colleague engineers and can act as point of contact for 2,3 developers. </p>
-        <p style={conText}>My ambition is to constantly grow his technical skills and now is programming 2 mobile apps using React Native.</p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-    )
-  }
-}
+const Home = () => {
+  return (
+    <div className="py-4">
+      <Jumbotron className="bg-light p-5 rounded shadow-sm">
+        <h1 className="display-4 font-weight-bold">Hello, world!</h1>
+        <p className="lead mt-3 text-secondary">
+          I am <strong>Denih Handoko</strong>, a Software Engineer specialized in backend development and scalable web architectures.
+        </p>
+        <hr className="my-4" />
+        <p className="text-muted">
+          Proficient in Python (FastAPI, Django), Golang (Gin), ETL data pipelines, and RESTful APIs.
+          Focused on writing clean, maintainable code and solving real-world software problems.
+        </p>
+        <div className="mt-4">
+          <Button tag={Link} to="/portofolio" color="dark" className="mr-2">
+            View Projects
+          </Button>
+          <Button tag={Link} to="/about" outline color="dark">
+            About Me
+          </Button>
+        </div>
+      </Jumbotron>
+    </div>
+  );
+};
 
 export default Home;
-
-const conText = {
-  color: "grey",
-  fontSize: "15px"
-}

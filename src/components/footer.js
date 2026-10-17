@@ -1,30 +1,20 @@
-import React, { Component } from 'react';
-import { Container, Col, Row } from 'reactstrap';
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
-class Footer extends Component {
-  render() {
-    return (
-      <div>
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="mt-auto py-3 bg-light border-top">
       <Container>
-        <br />
         <Row>
-          <Col sm="10">
-            <p style={myFooter}>@denihandoko - portofolio 2019</p>
-          </Col>
-          <Col sm="2">
-            <p style={myFooter}></p>
+          <Col className="text-center text-muted">
+            <small>© {currentYear} Denih Handoko. Built with React.</small>
           </Col>
         </Row>
-        
       </Container>
-      </div>
-    )
-  }
-}
+    </footer>
+  );
+};
 
 export default Footer;
-
-const myFooter = {
-  color: "grey",
-  fontSize: "11px"
-}
