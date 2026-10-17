@@ -1,24 +1,76 @@
 import React from 'react';
-import { Card, CardText, CardBody } from 'reactstrap';
+import { Card, CardBody, Badge } from 'reactstrap';
 
 const experiences = [
   {
     id: 1,
-    title: 'Full Stack Software Engineer - Sosaro',
-    subtitle: 'Juni 2019 – Oktober 2019',
-    content: 'Developed backend RESTful APIs with Python to power core mobile application features and integrated third-party services.'
+    role: 'Fullstack Developer',
+    company: 'Hyperscal',
+    location: 'Jakarta',
+    period: '11/2025 – 10/2026',
+    tech: 'Golang (Gin), Next JS, RESTful APIs, Document Parsing',
+    responsibilities: [
+      'Parsing payment services for payment processing systems.',
+      'Built document parsing pipelines to extract and transform invoice data from multiple formats into structured database records.',
+      'Migrated and refactored RESTful APIs from Django (Python) to Go (Gin), improving performance and scalability.',
+      'Re-architected legacy APIs from Java to Go (Gin) to streamline system efficiency and reduce latency.',
+      'Develop CRM modul revenue management.'
+    ]
   },
   {
     id: 2,
-    title: 'Full Stack Software Engineer - CoderDojo Indonesia',
-    subtitle: 'April 2018 – Mei 2019',
-    content: 'Engineered an apartment broker web platform for the US market using Python and Django within an Agile team of 4 engineers. Managed workflow via Jira and code via Git.'
+    role: 'Backend Developer',
+    company: 'Gramedia Digital',
+    location: 'Jakarta',
+    period: '03/2022 – 08/2025',
+    tech: 'RESTful APIs, Midtrans, Xendit, B2B/B2C Integrations',
+    responsibilities: [
+      'Developed and optimized APIs to support B2B & B2C operations.',
+      'Integrated payment gateways (Midtrans, Xendit).',
+      'Built Mitra Dashboard and automated marketplace airwaybill systems.',
+      'Enhanced wholesale and promotion features for better partner engagement.',
+      'Added promo product features to support marketing campaigns.',
+      'Integrated the new tier membership system.'
+    ]
   },
   {
     id: 3,
-    title: 'RF Analyst Engineer - PT. Jast 1 (Sub Telkomsel Company)',
-    subtitle: 'Maret 2014 – Oktober 2016',
-    content: 'Led cross-functional drive testing and rigger teams. Analyzed network log files with Nemo Analyzer, monitored 2G/3G/4G KPI metrics, and performed physical RF tuning.'
+    role: 'Fullstack Developer',
+    company: 'PT. Dipantara Inovasi Teknologi',
+    location: 'Jakarta',
+    period: '12/2019 – 08/2022',
+    tech: 'Python (Django, Flask), PostgreSQL, Bootstrap, Neo4j, Elasticsearch, Cronjob',
+    responsibilities: [
+      'Built scraping tools for YouTube & TikTok using Flask.',
+      'Implemented task scheduling with Cronjob.',
+      'Developed applications with Django, Bootstrap, PostgreSQL.',
+      'Integrated Flask with Neo4j, Elasticsearch, and Evello API.'
+    ]
+  },
+  {
+    id: 4,
+    role: 'Fullstack Developer',
+    company: 'SOSARO',
+    location: 'Jakarta',
+    period: '06/2019 – 10/2019',
+    tech: 'Python (Django, Flask), PostgreSQL, REST APIs',
+    responsibilities: [
+      'Created project management apps with Flask & PostgreSQL.',
+      'Built REST APIs with Django for mobile integration.'
+    ]
+  },
+  {
+    id: 5,
+    role: 'Fullstack Developer',
+    company: 'CoderDojo',
+    location: 'Yogyakarta',
+    period: '04/2018 – 04/2019',
+    tech: 'Python (Django), Vue.js, Jira, Bitbucket',
+    responsibilities: [
+      'Developed fullstack web apps using Django & Vue.js.',
+      'Improved frontend & backend features.',
+      'Managed sprints in Jira & version control with Bitbucket.'
+    ]
   }
 ];
 
@@ -27,11 +79,26 @@ const Experience = () => {
     <div className="py-4">
       <h3 className="mb-4">Work Experience</h3>
       {experiences.map((item) => (
-        <Card key={item.id} className="mb-3 shadow-sm border-0" style={{ background: '#f8f9fa' }}>
+        <Card key={item.id} className="mb-4 shadow-sm border-0" style={{ background: '#f8f9fa' }}>
           <CardBody>
-            <h5 className="font-weight-bold mb-1">{item.title}</h5>
-            <p style={subTitle} className="mb-2">{item.subtitle}</p>
-            <CardText className="text-secondary">{item.content}</CardText>
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-1">
+              <h5 className="font-weight-bold mb-1 mb-md-0 text-dark">
+                {item.role} <span className="font-weight-normal text-muted">— {item.company}, {item.location}</span>
+              </h5>
+              <Badge color="light" className="text-secondary border px-2 py-1 align-self-start align-self-md-auto" style={{ fontSize: '12px' }}>
+                {item.period}
+              </Badge>
+            </div>
+            {item.tech && (
+              <p className="text-muted mb-3" style={techStyle}>
+                <span className="font-weight-bold">Tech:</span> {item.tech}
+              </p>
+            )}
+            <ul className="mb-0 pl-3 text-secondary" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
+              {item.responsibilities.map((bullet, idx) => (
+                <li key={idx} className="mb-1">{bullet}</li>
+              ))}
+            </ul>
           </CardBody>
         </Card>
       ))}
@@ -41,8 +108,7 @@ const Experience = () => {
 
 export default Experience;
 
-const subTitle = {
-  color: '#6c757d',
+const techStyle = {
   fontSize: '13px',
   fontStyle: 'italic'
 };

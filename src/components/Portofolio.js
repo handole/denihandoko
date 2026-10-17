@@ -41,11 +41,11 @@ const projects = [
     githubUrl: 'https://github.com/handole/bookborrow'
   },
   {
-    id: 'parser-sky',
-    title: 'Parser Sky',
-    description: 'Data extraction and parser service designed to scrape, clean, and structure flight/aviation datasets.',
-    techStack: ['Python', 'Web Scraping', 'Data Parser'],
-    githubUrl: 'https://github.com/handole/parser-sky'
+    id: 'fastllm',
+    title: 'FastLLM',
+    description: 'Restful API service for parsing and extracting structured data from unstructured text using NLP techniques.',
+    techStack: ['Python', 'LLM', 'Fastapi'],
+    githubUrl: 'https://github.com/handole/fast-llm'
   },
   {
     id: 'gurupro',
