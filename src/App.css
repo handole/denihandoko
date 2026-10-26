@@ -7,11 +7,51 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f8fa;
+  color: #24292f;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Modern Card Styling */
+.modern-card {
+  background: #ffffff !important;
+  border: 1px solid #e1e4e8 !important;
+  border-radius: 12px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.modern-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(140, 149, 159, 0.18) !important;
+  border-color: #d0d7de !important;
+}
+
+/* Modern Hero Jumbotron */
+.hero-jumbotron {
+  background: linear-gradient(135deg, #ffffff 0%, #f6f8fa 100%) !important;
+  border: 1px solid #e1e4e8;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(140, 149, 159, 0.1) !important;
+}
+
+/* Modern Badges */
+.badge-soft {
+  background-color: #f1f3f5;
+  color: #343a40;
+  font-weight: 500;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+.badge-highlight {
+  background: linear-gradient(135deg, #e7f5ff 0%, #d0ebff 100%);
+  color: #1971c2;
+  border: 1px solid #a5d8ff;
+  border-radius: 6px;
 }
 
 /* Nav Link hover adjustment */

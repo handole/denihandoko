@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, Badge } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 
 const experiences = [
   {
@@ -76,21 +76,21 @@ const experiences = [
 const Experience = () => {
   return (
     <div className="py-4">
-      <h3 className="mb-4">Work Experience</h3>
+      <h3 className="mb-4 font-weight-bold text-dark">Work Experience</h3>
       {experiences.map((item) => (
-        <Card key={item.id} className="mb-4 shadow-sm border-0" style={{ background: '#f8f9fa' }}>
+        <Card key={item.id} className="mb-4 modern-card">
           <CardBody>
             <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-1">
               <h5 className="font-weight-bold mb-1 mb-md-0 text-dark">
                 {item.role} <span className="font-weight-normal text-muted">— {item.company}, {item.location}</span>
               </h5>
-              <Badge color="light" className="text-secondary border px-2 py-1 align-self-start align-self-md-auto" style={{ fontSize: '12px' }}>
+              <span className="badge-highlight px-2 py-1 align-self-start align-self-md-auto font-weight-bold" style={{ fontSize: '12px' }}>
                 {item.period}
-              </Badge>
+              </span>
             </div>
             {item.tech && (
               <p className="text-muted mb-3" style={techStyle}>
-                <span className="font-weight-bold">Tech:</span> {item.tech}
+                <span className="font-weight-bold text-secondary">Tech:</span> {item.tech}
               </p>
             )}
             <ul className="mb-0 pl-3 text-secondary" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>

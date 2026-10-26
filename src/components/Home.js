@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Row, Col, Card, CardBody, Badge } from 'reactstrap';
+import { Jumbotron, Button, Row, Col, Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 const skillCategories = [
@@ -28,7 +28,7 @@ const skillCategories = [
 const Home = () => {
   return (
     <div className="py-2">
-      <Jumbotron className="bg-light p-4 p-md-5 rounded shadow-sm mb-4">
+      <Jumbotron className="hero-jumbotron p-4 p-md-5 mb-4">
         <h1 className="display-4 font-weight-bold">Hello, world!</h1>
         <p className="lead mt-3 text-secondary">
           I am <strong>Denih Handoko</strong>, a <strong>Software Engineer — Python | Golang</strong> with 6+ years of experience building scalable APIs and high-performance backend systems.
@@ -38,10 +38,10 @@ const Home = () => {
           Strong in <strong>Python</strong> (FastAPI, Django, Flask) and <strong>Golang</strong> (Gin) for high-performance needs. Experienced in e-commerce, promo engines, document parsing pipelines, and payment integration systems. Focused on turning complex logic into clean, reliable, and maintainable code. Open to remote and hybrid roles.
         </p>
         <div className="mt-4">
-          <Button tag={Link} to="/experience" color="dark" className="mr-2 mb-2">
+          <Button tag={Link} to="/experience" color="dark" className="mr-2 mb-2 font-weight-bold px-3">
             View Experience
           </Button>
-          <Button tag={Link} to="/portofolio" outline color="dark" className="mr-2 mb-2">
+          <Button tag={Link} to="/portofolio" outline color="dark" className="mr-2 mb-2 px-3">
             View Projects
           </Button>
           <Button
@@ -49,9 +49,9 @@ const Home = () => {
             href="/CV_Denih_Handoko.pdf"
             download="CV_Denih_Handoko.pdf"
             color="success"
-            className="mr-2 mb-2 font-weight-bold"
+            className="mr-2 mb-2 font-weight-bold px-3"
           >
-            Download CV (PDF)
+            Download CV (PDF) ⤓
           </Button>
           <Button
             tag="a"
@@ -60,7 +60,7 @@ const Home = () => {
             rel="noopener noreferrer"
             color="primary"
             outline
-            className="mb-2"
+            className="mb-2 font-weight-bold px-3"
           >
             LinkedIn Profile ↗
           </Button>
@@ -68,23 +68,22 @@ const Home = () => {
       </Jumbotron>
 
       <div className="mb-4">
-        <h3 className="mb-3 font-weight-bold">Technical Skills</h3>
+        <h3 className="mb-3 font-weight-bold text-dark">Technical Skills</h3>
         <Row>
           {skillCategories.map((group) => (
             <Col md="6" lg="4" key={group.category} className="mb-3">
-              <Card className="h-100 shadow-sm border-0" style={{ background: '#f8f9fa' }}>
+              <Card className="h-100 modern-card">
                 <CardBody>
-                  <h6 className="font-weight-bold text-dark mb-2">{group.category}</h6>
+                  <h6 className="font-weight-bold text-dark mb-3">{group.category}</h6>
                   <div>
                     {group.skills.map((skill) => (
-                      <Badge
-                        color="dark"
+                      <span
                         key={skill}
-                        className="mr-1 mb-1 font-weight-normal px-2 py-1"
+                        className="badge-soft d-inline-block mr-1 mb-2 px-2 py-1"
                         style={{ fontSize: '12px' }}
                       >
                         {skill}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </CardBody>

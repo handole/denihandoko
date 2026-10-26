@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Card, CardBody, CardTitle, CardText,
-  Badge, Button, Row, Col
+  Button, Row, Col
 } from 'reactstrap';
 
 const projects = [
@@ -60,28 +60,28 @@ class Portofolio extends Component {
   render() {
     return (
       <div className="py-4">
-        <h3 className="mb-4">Featured Projects</h3>
+        <h3 className="mb-4 font-weight-bold text-dark">Featured Projects</h3>
         <Row>
           {projects.map((project) => (
             <Col sm="6" key={project.id} className="mb-4">
-              <Card className="h-100 shadow-sm border-0" style={{ background: '#f8f9fa' }}>
-                <CardBody className="d-flex flex-column justify-content-between">
+              <Card className="h-100 modern-card">
+                <CardBody className="d-flex flex-column justify-content-between p-4">
                   <div>
-                    <CardTitle tag="h5" className="font-weight-bold text-dark">
+                    <CardTitle tag="h5" className="font-weight-bold text-dark mb-2">
                       {project.title}
                     </CardTitle>
                     <div className="mb-3">
                       {project.techStack.map((tech) => (
-                        <Badge color="secondary" className="mr-1" key={tech}>
+                        <span className="badge-soft d-inline-block mr-1 mb-1 px-2 py-1" key={tech} style={{ fontSize: '11.5px' }}>
                           {tech}
-                        </Badge>
+                        </span>
                       ))}
                     </div>
-                    <CardText className="text-muted" style={{ fontSize: '14px' }}>
+                    <CardText className="text-secondary" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
                       {project.description}
                     </CardText>
                   </div>
-                  <div className="pt-3">
+                  <div className="pt-3 border-top mt-3">
                     <Button
                       color="dark"
                       size="sm"
@@ -89,6 +89,7 @@ class Portofolio extends Component {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="font-weight-bold px-3"
                     >
                       View on GitHub →
                     </Button>
