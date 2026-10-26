@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" aria-label="DH Logo">
+  <defs>
+    <linearGradient id="dhGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#212529" />
+      <stop offset="100%" stop-color="#343a40" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded squircle with subtle border -->
+  <rect x="1" y="1" width="38" height="38" rx="10" fill="url(#dhGradient)" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" />
+
+  <!-- Monogram text 'dh' -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="20">
+    <!-- 'd' letter in clean white -->
+    <text x="8.5" y="27" fill="#ffffff" letter-spacing="-1">d</text>
+    <!-- 'h' letter in electric cyan accent -->
+    <text x="19.5" y="27" fill="url(#cyanAccent)" letter-spacing="-1">h</text>
+  </g>
+
+  <!-- Subtle tech dot / status indicator -->
+  <circle cx="31.5" cy="25.5" r="2" fill="#00f2fe" />
+</svg>

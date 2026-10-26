@@ -9,14 +9,14 @@ const projects = [
     id: 'chemistfun',
     title: 'ChemistFun',
     description: 'Virtual chemistry lab simulator powered by LLM integration to simulate realistic chemical experiments safely.',
-    techStack: ['Vue.js', 'LLM', 'Virtual Lab'],
+    techStack: ['Python', 'FastAPI', 'Vue.js', 'LLM', 'Virtual Lab', 'PostgreSQL'],
     githubUrl: 'https://github.com/handole/chemistfun'
   },
   {
     id: 'customer-pipeline',
     title: 'Customer Pipeline',
     description: 'Data ingestion and ETL pipeline for processing customer event streams, transformation, and analytical reporting.',
-    techStack: ['Python', 'ETL', 'Data Pipeline'],
+    techStack: ['Python', 'ETL', 'Data Pipeline', 'PostgreSQL'],
     githubUrl: 'https://github.com/handole/customer-pipeline'
   },
   {

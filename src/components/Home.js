@@ -44,8 +44,25 @@ const Home = () => {
           <Button tag={Link} to="/portofolio" outline color="dark" className="mr-2 mb-2">
             View Projects
           </Button>
-          <Button tag={Link} to="/about" color="secondary" outline className="mb-2">
-            About Me
+          <Button
+            tag="a"
+            href="/CV_Denih_Handoko.pdf"
+            download="CV_Denih_Handoko.pdf"
+            color="success"
+            className="mr-2 mb-2 font-weight-bold"
+          >
+            Download CV (PDF)
+          </Button>
+          <Button
+            tag="a"
+            href="https://www.linkedin.com/in/denih-handoko-79584656"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="primary"
+            outline
+            className="mb-2"
+          >
+            LinkedIn Profile ↗
           </Button>
         </div>
       </Jumbotron>

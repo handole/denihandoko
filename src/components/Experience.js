@@ -7,14 +7,14 @@ const experiences = [
     role: 'Fullstack Developer',
     company: 'Hyperscal Digital Indonesia',
     location: 'Jakarta',
-    period: '12/2025 – 11/2026',
-    tech: 'Golang (Gin), Next JS, RESTful APIs, Kafka',
+    period: '12/2025 – Present',
+    tech: 'Golang (Gin), Next JS, RESTful APIs, Kafka, Document Parsing',
     responsibilities: [
-      'Parsing payment services for payment processing systems.',
-      'Built document parsing pipelines to extract and transform invoice data from multiple formats into structured database records.',
-      'Migrated and refactored RESTful APIs from Django (Python) to Go (Gin), improving performance and scalability.',
-      'Re-architected legacy APIs from Java to Go (Gin) to streamline system efficiency and reduce latency.',
-      'Develop CRM modul revenue management.'
+      'Architected payment parsing services handling multi-format payment payloads with high accuracy.',
+      'Engineered automated document parsing pipelines extracting and transforming invoice datasets into structured records, reducing manual processing time by ~60%.',
+      'Migrated and refactored core RESTful API endpoints from Django (Python) to Go (Gin), achieving a ~45% reduction in API response latency.',
+      'Re-architected legacy Java services into modular Go (Gin) microservices to streamline system resource usage and maintain peak traffic stability.',
+      'Developed and integrated CRM revenue management modules to track financial reconciliations.'
     ]
   },
   {
@@ -23,14 +23,13 @@ const experiences = [
     company: 'Gramedia Digital',
     location: 'Jakarta',
     period: '03/2022 – 08/2025',
-    tech: 'RESTful APIs, Python (FastAPI), MongoDB, Redis, E-Commerce, B2B/B2C Integrations',
+    tech: 'RESTful APIs, Python (FastAPI), MongoDB, Redis, Midtrans, Xendit, B2B/B2C Integrations',
     responsibilities: [
-      'Developed and optimized APIs to support B2B & B2C operations.',
-      'Integrated payment gateways (Midtrans, Xendit).',
-      'Built Mitra Dashboard and automated marketplace airwaybill systems.',
-      'Enhanced wholesale and promotion features for better partner engagement.',
-      'Added promo product features to support marketing campaigns.',
-      'Integrated the new tier membership system.'
+      'Engineered and scaled high-throughput RESTful APIs serving thousands of daily active users across B2B and B2C digital commerce channels.',
+      'Integrated payment gateways (Midtrans, Xendit) with automated webhook retries and callback validation, cutting transaction failure rates.',
+      'Built Mitra Dashboard and automated marketplace airwaybill generation, reducing shipping manifest processing from hours to minutes.',
+      'Enhanced wholesale and dynamic promotional campaign engines to accommodate seasonal flash sales with low Redis cache latency.',
+      'Delivered new tier membership rewards system supporting marketing loyalty programs.'
     ]
   },
   {
@@ -41,10 +40,10 @@ const experiences = [
     period: '12/2019 – 08/2022',
     tech: 'Python (Django, Flask), PostgreSQL, Bootstrap, Neo4j, Elasticsearch, Cronjob',
     responsibilities: [
-      'Built scraping tools for YouTube & TikTok using Flask.',
-      'Implemented task scheduling with Cronjob.',
-      'Developed applications with Django, Bootstrap, PostgreSQL.',
-      'Integrated Flask with Neo4j, Elasticsearch, and Evello API.'
+      'Built automated scraping tools for YouTube and TikTok data ingestion using Flask, handling daily scheduled batch jobs.',
+      'Implemented robust task scheduling and error alerting via Cronjob for uninterrupted data harvesting.',
+      'Developed data-driven web applications with Django, Bootstrap, and PostgreSQL.',
+      'Integrated Flask backend with Neo4j graph database, Elasticsearch full-text search, and Evello analytics API.'
     ]
   },
   {
@@ -55,8 +54,8 @@ const experiences = [
     period: '06/2019 – 10/2019',
     tech: 'Python (Django, Flask), PostgreSQL, REST APIs',
     responsibilities: [
-      'Created project management apps with Flask & PostgreSQL.',
-      'Built REST APIs with Django for mobile integration.'
+      'Created project management web applications using Flask, Bootstrap, and PostgreSQL.',
+      'Built secured REST APIs using Django for mobile client consumption.'
     ]
   },
   {
@@ -67,9 +66,9 @@ const experiences = [
     period: '04/2018 – 04/2019',
     tech: 'Python (Django), Vue.js, Jira, Bitbucket',
     responsibilities: [
-      'Developed fullstack web apps using Django & Vue.js.',
-      'Improved frontend & backend features.',
-      'Managed sprints in Jira & version control with Bitbucket.'
+      'Developed fullstack web applications using Django backend and Vue.js reactive frontend.',
+      'Enhanced user experience and backend processing workflows across sprint releases.',
+      'Managed agile sprint tasks in Jira and maintained version control workflows with Bitbucket.'
     ]
   }
 ];

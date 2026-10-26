@@ -6,6 +6,7 @@ import About from './components/About';
 import Portofolio from './components/Portofolio';
 import Experience from './components/Experience';
 import Footer from './components/footer';
+import logo from './logo.svg';
 import {
   Container,
   Navbar,
@@ -38,8 +39,16 @@ const App = () => {
       <div className="d-flex flex-column min-vh-100">
         <Navbar color="dark" dark expand="md" className="py-3 sticky-top">
           <Container>
-            <NavbarBrand tag={Link} to="/" style={navTitle} onClick={closeSidebar}>
-              Handoko
+            <NavbarBrand tag={Link} to="/" className="d-flex align-items-center" style={navTitle} onClick={closeSidebar}>
+              <img
+                src={logo}
+                alt="DH Logo"
+                width="34"
+                height="34"
+                className="mr-2 rounded"
+                style={{ verticalAlign: 'middle', boxShadow: '0 2px 6px rgba(0,0,0,0.3)' }}
+              />
+              <span>Handoko</span>
             </NavbarBrand>
 
             {/* Mobile Hamburger Button */}
@@ -57,7 +66,7 @@ const App = () => {
 
             {/* Desktop Navbar Menu */}
             <div className="d-none d-md-block">
-              <Nav className="ml-auto" navbar>
+              <Nav className="ml-auto align-items-center" navbar>
                 <NavItem>
                   <NavLink tag={Link} to="/about" style={navItemStyle}>
                     About
@@ -75,6 +84,16 @@ const App = () => {
                 </NavItem>
                 <NavItem>
                   <NavLink
+                    href="https://www.linkedin.com/in/denih-handoko-79584656"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={navItemStyle}
+                  >
+                    LinkedIn
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
                     href="https://github.com/handole?tab=repositories"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -82,6 +101,16 @@ const App = () => {
                   >
                     GitHub
                   </NavLink>
+                </NavItem>
+                <NavItem className="ml-2">
+                  <a
+                    href="/CV_Denih_Handoko.pdf"
+                    download="CV_Denih_Handoko.pdf"
+                    className="btn btn-outline-light btn-sm px-3 font-weight-bold"
+                    style={{ borderRadius: '20px' }}
+                  >
+                    Download CV
+                  </a>
                 </NavItem>
               </Nav>
             </div>
@@ -101,9 +130,18 @@ const App = () => {
           aria-label="Mobile Navigation"
         >
           <div className="sidebar-header">
-            <span className="text-white font-weight-bold" style={{ fontSize: '18px' }}>
-              Menu
-            </span>
+            <div className="d-flex align-items-center">
+              <img
+                src={logo}
+                alt="DH Logo"
+                width="28"
+                height="28"
+                className="mr-2 rounded"
+              />
+              <span className="text-white font-weight-bold" style={{ fontSize: '18px' }}>
+                Menu
+              </span>
+            </div>
             <button
               type="button"
               className="close-btn"
@@ -128,6 +166,15 @@ const App = () => {
               Portofolio
             </Link>
             <a
+              href="https://www.linkedin.com/in/denih-handoko-79584656"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sidebar-nav-link"
+              onClick={closeSidebar}
+            >
+              LinkedIn ↗
+            </a>
+            <a
               href="https://github.com/handole?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
@@ -136,6 +183,16 @@ const App = () => {
             >
               GitHub ↗
             </a>
+            <div className="px-3 pt-3">
+              <a
+                href="/CV_Denih_Handoko.pdf"
+                download="CV_Denih_Handoko.pdf"
+                className="btn btn-outline-light btn-block font-weight-bold"
+                onClick={closeSidebar}
+              >
+                Download CV (PDF)
+              </a>
+            </div>
           </div>
 
           <div className="sidebar-footer">
